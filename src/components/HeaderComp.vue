@@ -1,16 +1,17 @@
 <template>
     <section class="d-flex p-2">
         <img src="public\images\breaking_bad.6d275852.jpg" alt="Logo">
-        <h1>Breaking Bad API</h1>
+        <h1>{{ title }}</h1>
     </section>
 </template>
 
 <script>
-import SelectComp from './SelectComp.vue';
 
 export default {
     name: "HeaderComp",
-    components: { SelectComp }
+    props: {
+        title: String
+    }
 }
 </script>
 

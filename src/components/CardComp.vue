@@ -1,8 +1,8 @@
 <template>
     <div class="col mycard">
-        <img src="" alt="">
-        <h3></h3>
-        <h2></h2>
+        <img :src="item.img" :alt="item.name" class="img-fluid">
+        <h4>{{ item.name }}</h4>
+        <h3>{{ item.status }}</h3>
         <div></div>
     </div>
 </template>
@@ -10,6 +10,9 @@
 <script>
 export default {
     name: 'CardComp',
+    props: [
+        'item',
+    ]
 }
 </script>
 
@@ -20,5 +23,16 @@ export default {
     color: black;
     padding: 1em;
     background-color: $background;
+    height: 500px;
+
+    img {
+        width: 218px;
+        height: 310px;
+        object-fit: cover;
+    }
+
+    h4 {
+        color: #fff;
+    }
 }
 </style>

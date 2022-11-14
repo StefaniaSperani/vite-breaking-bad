@@ -1,9 +1,7 @@
 <template>
-    <select id="select">
-        <option value="volvo">Alive</option>
-        <option value="saab">Deceased</option>
-        <option value="opel">Presumed dead</option>
-    </select>
+    <div id="select" class="container">
+        search
+    </div>
 </template>
 
 <script>
@@ -14,8 +12,4 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/style/general.scss' as *;
-
-.select {
-    margin: 2em;
-}
 </style>
