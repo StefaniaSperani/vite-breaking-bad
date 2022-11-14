@@ -4,7 +4,13 @@
   </header>
   <main>
     <SelectComp />
-    <CharactersComp :charList="charList" />
+    <div v-if="loading">
+      <LoadingComp />
+    </div>
+    <div v-if="!loading">
+      <CharactersComp :charList="charList" />
+    </div>
+
   </main>
 
 </template>
@@ -14,23 +20,23 @@ import "@fontsource/montserrat"
 import CharactersComp from "./components/CharactersComp.vue";
 import HeaderComp from "./components/HeaderComp.vue";
 import SelectComp from "./components/SelectComp.vue";
+import LoadingComp from './components/LoadingComp.vue';
 import axios from 'axios'
-/*
-"char_id": 1,
-"name": "Walter White",
-"img": "",
-"status": "Presumed dead",
-*/
+
+
+
 export default {
   components: {
     HeaderComp,
     SelectComp,
-    CharactersComp
+    CharactersComp,
+    LoadingComp
   },
   data() {
     return {
       apiURL: 'https://www.breakingbadapi.com/api/characters',
       charList: [],
+      loading: true
     }
   },
   methods: {
@@ -38,6 +44,7 @@ export default {
       axios.get(this.apiURL).then(
         (response) => {
           this.charList = response.data;
+          this.loading = false;
         }
       )
     }

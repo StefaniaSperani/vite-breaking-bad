@@ -6,8 +6,6 @@
                 <CardComp :item="item" v-for="item in charList" :key="item.id" />
             </div>
         </div>
-
-
     </div>
 </template>
 
