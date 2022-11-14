@@ -6,8 +6,11 @@
 </template>
 
 <script>
+import SelectComp from './SelectComp.vue';
+
 export default {
-    name: 'HeaderComp',
+    name: "HeaderComp",
+    components: { SelectComp }
 }
 </script>
 
