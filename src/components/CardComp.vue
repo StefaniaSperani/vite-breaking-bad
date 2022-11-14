@@ -1,21 +1,9 @@
 <template>
-    <div class="mycard">
-        prova
-    </div>
-    <div class="mycard">
-        prova
-    </div>
-    <div class="mycard">
-        prova
-    </div>
-    <div class="mycard">
-        prova
-    </div>
-    <div class="mycard">
-        prova
-    </div>
-    <div class="mycard">
-        prova
+    <div class="col mycard">
+        <img src="" alt="">
+        <h3></h3>
+        <h2></h2>
+        <div></div>
     </div>
 </template>
 
@@ -26,9 +14,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use '../assets/style/general.scss' as *;
+@use '../assets/style/partials/variables' as *;
 
 .mycard {
     color: black;
+    padding: 1em;
+    background-color: $background;
 }
 </style>

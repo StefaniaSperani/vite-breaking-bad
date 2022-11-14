@@ -1,11 +1,8 @@
 <template>
     <div class="container bg-light p-5">
         <div class="found">Found TOT characters</div>
-        <div class="row ">
-            <div class=" col-2 d-flex flex-row">
-                <CardComp />
-            </div>
-
+        <div class="row row-cols-5 d-flex flex-row">
+            <CardComp />
         </div>
 
     </div>
