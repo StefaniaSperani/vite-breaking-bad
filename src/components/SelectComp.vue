@@ -4,9 +4,6 @@
         <option value="saab">Deceased</option>
         <option value="opel">Presumed dead</option>
     </select>
-    <div class="p-5">
-        prova
-    </div>
 </template>
 
 <script>
@@ -16,7 +13,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-select {
+@use '../assets/style/general.scss' as *;
+
+.select {
     margin: 2em;
 }
 </style>

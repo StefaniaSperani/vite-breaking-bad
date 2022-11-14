@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="d-flex p-2">
         <img src="public\images\breaking_bad.6d275852.jpg" alt="Logo">
         <h1>Breaking Bad API</h1>
     </section>
@@ -16,11 +16,11 @@ export default {
 
 <style lang="scss" scoped>
 img {
-    width: 1%;
+    width: 2%;
+    margin: 0.5em;
 }
 
 h1 {
     display: inline;
-    margin: 0 0.5em;
 }
 </style>
