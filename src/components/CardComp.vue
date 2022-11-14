@@ -1,9 +1,9 @@
 <template>
-    <div class="col mycard">
+    <div class="mycard text-center">
         <img :src="item.img" :alt="item.name" class="img-fluid">
-        <h4>{{ item.name }}</h4>
-        <h3>{{ item.status }}</h3>
-        <div></div>
+        <h4 class="fs-5">{{ item.name }}</h4>
+        <h3 class="fs-4">{{ item.category }}</h3>
+        <h3 class="fs-6">{{ item.status }}</h3>
     </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
     color: black;
     padding: 1em;
     background-color: $background;
+    width: 220px;
     height: 500px;
 
     img {
@@ -33,6 +34,14 @@ export default {
 
     h4 {
         color: #fff;
+        padding: 0.3em;
+        font-weight: 700;
+        text-transform: uppercase;
+        height: 70px;
+    }
+
+    h3 {
+        color: $font-color;
     }
 }
 </style>

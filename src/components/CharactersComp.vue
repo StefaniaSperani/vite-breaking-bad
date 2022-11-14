@@ -1,9 +1,9 @@
 <template>
     <div class="container bg-light p-5">
-        <div class="found">Found TOT characters</div>
+        <div class="found">Found {{ charList.length }} characters</div>
         <div class="container">
-            <div class="row row-cols-5 d-flex flex-row flex-wrap">
-                <CardComp :item="item" v-for="(item, index) in charList" :key="item.id" />
+            <div class="row d-flex align-items-center justify-content-center gap-3">
+                <CardComp :item="item" v-for="item in charList" :key="item.id" />
             </div>
         </div>
 

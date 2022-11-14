@@ -23,5 +23,7 @@ img {
 
 h1 {
     display: inline;
+    font-weight: 700;
+    margin: 0;
 }
 </style>
