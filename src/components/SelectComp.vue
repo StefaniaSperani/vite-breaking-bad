@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <select>
+        <select id="searchCat" v-model="search" @change="changed">
             <option selected value="">Select category</option>
             <option :value="cat" v-for="(cat, index ) in categoryOpt" :key="index">{{ cat }}
             </option>
@@ -19,9 +19,17 @@ export default {
                 'Breaking Bad',
                 'Better Call Saul'
             ],
+            search: ''
         }
     },
+    methods: {
+        changed() {
+            this.$emit('filterCategory', this.search)
+            console.log(this.search);
+        }
+    }
 }
+
 </script>
 
 <style lang="scss" scoped>

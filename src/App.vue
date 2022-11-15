@@ -3,13 +3,8 @@
     <HeaderComp title="Breaking Bad Api" />
   </header>
   <main>
-    <SelectComp />
-    <div v-if="loading">
-      <LoadingComp />
-    </div>
-    <div v-if="!loading">
-      <CharactersComp :charList="charList" />
-    </div>
+    <SelectComp @filterCategory="filterChar" />
+    <CharactersComp :charList="filteredCategory" :loading="loading" />
 
   </main>
 
@@ -20,7 +15,6 @@ import "@fontsource/montserrat"
 import CharactersComp from "./components/CharactersComp.vue";
 import HeaderComp from "./components/HeaderComp.vue";
 import SelectComp from "./components/SelectComp.vue";
-import LoadingComp from './components/LoadingComp.vue';
 import axios from 'axios'
 
 
@@ -29,14 +23,23 @@ export default {
   components: {
     HeaderComp,
     SelectComp,
-    CharactersComp,
-    LoadingComp
+    CharactersComp
   },
   data() {
     return {
       apiURL: 'https://www.breakingbadapi.com/api/characters',
       charList: [],
-      loading: true
+      loading: true,
+      searchCat: ''
+    }
+  },
+  computed: {
+    filteredCategory() {
+      return this.charList.filter((char) => {
+        if (char.category.toLowerCase().includes(this.searchCat.toLowerCase())) {
+          return true;
+        }
+      })
     }
   },
   methods: {
@@ -46,7 +49,13 @@ export default {
           this.charList = response.data;
           this.loading = false;
         }
-      )
+      ).catch((error) => {
+        this.loading = false;
+        console.log(error);
+      })
+    },
+    filterChar(value) {
+      this.searchCat = value
     }
   },
   created() {
