@@ -1,10 +1,9 @@
 <template>
     <div class="container">
-        <select v-model="selected">
-            <option disabled value="">Select category</option>
-            <option value="">A</option>
-            <option value="">B</option>
-            <option value="">C</option>
+        <select>
+            <option selected value="">Select category</option>
+            <option :value="cat" v-for="(cat, index ) in categoryOpt" :key="index">{{ cat }}
+            </option>
         </select>
 
     </div>
@@ -16,7 +15,10 @@ export default {
     name: 'SelectComp',
     data() {
         return {
-            selected: '',
+            categoryOpt: [
+                'Breaking Bad',
+                'Better Call Saul'
+            ],
         }
     },
 }
@@ -29,5 +31,9 @@ select {
     padding: 0.5em;
     margin: 1em 0.5em;
     border-radius: 8px;
+
+    option {
+        text-transform: capitalize;
+    }
 }
 </style>
