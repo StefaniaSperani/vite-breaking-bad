@@ -1,6 +1,6 @@
 <template>
     <section class="d-flex p-2">
-        <img src="public\images\breaking_bad.6d275852.jpg" alt="Logo">
+        <img src="/public/images/breaking_bad.6d275852.jpg" alt="Logo">
         <h1>{{ title }}</h1>
     </section>
 </template>
